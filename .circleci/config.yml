@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.11
+        environment:
+          GO111MODULE: "on"
+
+    working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-module-cache-{{ .Branch }}-{{ checksum "go.mod" }}
+
+      - run: go get -v -t -d ./...
+      - run: go get -u golang.org/x/lint/golint
+
+      - save_cache:
+          key: v1-module-cache-{{ .Branch }}-{{ checksum "go.mod" }}
+          paths:
+            - /go/pkg
+
+      - run: go vet -v ./...
+      - run: golint ./...
+      - run: go test -v ./...
