@@ -2,7 +2,7 @@
 
 The prchecker package can fetch pull requests from specific repositories and can filters those by author. 
 
-## Usage
+### Usage
 
 ```text
 prchecker fetches pull requests from Github repositories.
