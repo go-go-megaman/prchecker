@@ -22,8 +22,8 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/go-go-megaman/prchecker/repository"
 	"github.com/spf13/cobra"
-	"prchecker/repository"
 )
 
 var runCmd = &cobra.Command{

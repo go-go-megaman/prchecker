@@ -20,7 +20,7 @@
 
 package main
 
-import "prchecker/cmd"
+import "github.com/go-go-megaman/prchecker/cmd"
 
 func main() {
 	cmd.Execute()

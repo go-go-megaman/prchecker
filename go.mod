@@ -1,4 +1,4 @@
-module prchecker
+module github.com/go-go-megaman/prchecker
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect
