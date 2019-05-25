@@ -42,7 +42,7 @@ repositories:
 
 #### authors
 
-The authors configuration make fetched pull requests filter by setting values. This is optional configuration. If you don't set this configuration, prchecker will not filter pull requests by author.
+The authors configuration make fetched pull requests filter by setting values. This is optional configuration. If you didn't set this configuration, prchecker will not filter pull requests by author.
 
 ```yaml
 authors:
