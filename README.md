@@ -2,6 +2,12 @@
 
 The prchecker package can fetch pull requests from specific repositories and can filters those by author. 
 
+### Installation
+
+```bash
+go get -u github.com/go-go-megaman/prchecker
+```
+
 ### Usage
 
 ```text
