@@ -6,9 +6,13 @@ The prchecker package can fetch pull requests with open status from specific rep
 
 ### Installation
 
+Execute `go get` command.
+
 ```bash
 go get -u github.com/go-go-megaman/prchecker
 ```
+
+And create [YAML configuration](#configuration) in where you want to create. If you don't specified `--config`, the package read configuration form $HOME/.prchecker.yaml.
 
 ### Usage
 
