@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/go-go-megaman/prchecker.svg?style=svg)](https://circleci.com/gh/go-go-megaman/prchecker)
 
-The prchecker package can fetch pull requests from specific repositories and can filter those by author. 
+The prchecker package can fetch pull requests with open status from specific repositories. And the package can filter pull requests by author. 
 
 ### Installation
 
