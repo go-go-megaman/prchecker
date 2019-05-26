@@ -20,23 +20,46 @@
 
 package cmd
 
-import "errors"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
-// Config is the structure of the configuration for prchecker.
-type Config struct {
-	Token        string
-	Repositories []string
-	Authors      []string
-}
-
-func (c *Config) validate() error {
-	if c.Token == "" {
-		return errors.New("add token to configuration")
+func TestValidate(t *testing.T) {
+	testCases := []struct {
+		config   Config
+		hasError bool
+	}{
+		{
+			config: Config{
+				Token: "",
+			},
+			hasError: true,
+		},
+		{
+			config: Config{
+				Token:        "token",
+				Repositories: []string{},
+			},
+			hasError: true,
+		},
+		{
+			config: Config{
+				Token: "token",
+				Repositories: []string{
+					"repository",
+				},
+			},
+			hasError: false,
+		},
 	}
 
-	if len(c.Repositories) == 0 {
-		return errors.New("add repositories to configuration")
+	for _, testCase := range testCases {
+		actual := testCase.config.validate()
+		if testCase.hasError {
+			assert.Error(t, actual)
+		} else {
+			assert.NoError(t, actual)
+		}
 	}
-
-	return nil
 }

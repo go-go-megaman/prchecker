@@ -38,6 +38,11 @@ func init() {
 }
 
 func run(_ *cobra.Command, _ []string) {
+	if err := config.validate(); err != nil {
+		fmt.Println(err)
+		return
+	}
+
 	for _, repositoryPath := range config.Repositories {
 		r, err := repository.New(repositoryPath)
 		if err != nil {
